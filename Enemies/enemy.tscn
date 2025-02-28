@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2ook75klawid"]
+
+[ext_resource type="Script" path="res://Enemies/enemy.gd" id="1_lu18m"]
+[ext_resource type="Script" path="res://Enemies/hitbox.gd" id="2_0004a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ppu"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ggldf"]
+material = SubResource("StandardMaterial3D_h7ppu")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h5q1j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_idjgq"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_lu18m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 4
+mesh = SubResource("CapsuleMesh_ggldf")
+skeleton = NodePath("")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="front" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103361, 0.478379, -0.396459)
+size = Vector3(0.673767, 0.304199, 0.281189)
+
+[node name="hitbox" type="Area3D" parent="." groups=["enemy"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_0004a")
+
+[node name="hitboxShape" type="CollisionShape3D" parent="hitbox"]
+shape = SubResource("CapsuleShape3D_h5q1j")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_idjgq")
+
+[connection signal="bodyPartHit" from="hitbox" to="." method="_on_hitbox_body_part_hit"]
