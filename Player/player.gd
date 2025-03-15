@@ -9,12 +9,12 @@ var instance
 
 var gunIsLowered = false;
 
-@onready var neck := $Neck;
-@onready var camera := $Neck/Camera3D;
+@onready var neck := $Neck
+@onready var camera := $Neck/Camera3D
 @onready var subViewPortCamera = $SubViewportContainer/SubViewport/subviewportcamera;
 @onready var revolver_animation = $Neck/Camera3D/revolver/AnimationPlayer;
 @onready var gun_barrel = $Neck/Camera3D/revolver/frame/RayCast3D;
-@onready var nearWallRay = $Neck/Camera3D/nearWallRay;
+@onready var nearWallRay = $Neck/Camera3D/nearWallRay
 
 var target_velocity = Vector3.ZERO
 

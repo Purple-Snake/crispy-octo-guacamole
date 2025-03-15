@@ -25,13 +25,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.232238)
 cull_mask = 524287
 
 [node name="revolver" parent="Neck/Camera3D" instance=ExtResource("2_53s8t")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.396587, -0.0847446, -0.411543)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.26333, -0.412)
 
 [node name="nearWallRay" type="RayCast3D" parent="Neck/Camera3D"]
-transform = Transform3D(15, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.378546, -0.00650924, -0.159217)
+transform = Transform3D(15, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.0383743, -0.163922, -0.159217)
 target_position = Vector3(0, 0, -0.755)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -43,7 +44,7 @@ stretch = true
 transparent_bg = true
 handle_input_locally = false
 positional_shadow_atlas_size = 4096
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="subviewportcamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
