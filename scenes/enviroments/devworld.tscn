@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://baiqu60qjn8nn"]
+[gd_scene load_steps=6 format=3 uid="uid://baiqu60qjn8nn"]
 
-[ext_resource type="PackedScene" uid="uid://c2ook75klawid" path="res://Enemies/enemy.tscn" id="1_a6cwm"]
+[ext_resource type="PackedScene" uid="uid://5cp4u2q351c5" path="res://assets/mansion/GameMap.tscn" id="1_ys0wt"]
 [ext_resource type="PackedScene" uid="uid://bbdpcuhi2l407" path="res://Player/player.tscn" id="2_mhlwi"]
-[ext_resource type="PackedScene" uid="uid://wq8fc3hyuf3g" path="res://assets/map_test.tscn" id="3_scqo2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3kjl7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,11 +25,7 @@ environment = SubResource("Environment_g1ih7")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Enemy" parent="." instance=ExtResource("1_a6cwm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2712, 1.17402, -2.47398)
-playerPath = NodePath("../Player")
+[node name="GameMap" parent="." instance=ExtResource("1_ys0wt")]
 
 [node name="Player" parent="." instance=ExtResource("2_mhlwi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9157, 1.35751, 33.4382)
-
-[node name="map test" parent="." instance=ExtResource("3_scqo2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.387014, 0.400652, 7.86765)

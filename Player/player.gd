@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var fall_acceleration = 75;
 @export var jump_impulse = 5;
 
+signal itemInteract;
+
 var bullet = load("res://Player/bullet.tscn");
 var instance
 
@@ -64,14 +66,7 @@ func _physics_process(delta):
 			instance.position = gun_barrel.global_position
 			instance.transform.basis = gun_barrel.global_transform.basis
 			get_parent().add_child(instance)
-			
-	#if gun_barrel.is_colliding():
-		#revolver_animation.play("gun_lowered");
-		#gunIsLowered = true;
-	#elif gunIsLowered == true:
-		#revolver_animation.play("gun_raised");
-		#gunIsLowered = false;
-		
+	
 #Lower the gun when near a wall
 	if gunIsLowered == false && nearWallRay.is_colliding():
 		revolver_animation.play("gun_lowered");
@@ -79,4 +74,8 @@ func _physics_process(delta):
 	elif gunIsLowered == true && !nearWallRay.is_colliding():
 		revolver_animation.play("gun_raised");
 		gunIsLowered = false;
+
+func _input(event):
+	if event.is_action("interact") && nearWallRay.is_colliding():
+		emit_signal("itemInteract", nearWallRay.get_collider())
 
