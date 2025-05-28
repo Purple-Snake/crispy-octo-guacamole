@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://s0jd1sc1ml5j"]
+
+[ext_resource type="PackedScene" uid="uid://crogoucfy1aaw" path="res://data/assets/key/key.glb" id="1_8lqug"]
+[ext_resource type="Material" uid="uid://bm750ax53yaa5" path="res://data/materials/key.tres" id="2_7od2d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxijj"]
+size = Vector3(0.303162, 0.136169, 0.605896)
+
+[node name="key" instance=ExtResource("1_8lqug")]
+
+[node name="Torus" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_7od2d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0135803, 0.0343323, 0.108124)
+shape = SubResource("BoxShape3D_gxijj")

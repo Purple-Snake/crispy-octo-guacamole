@@ -1,0 +1,172 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf2ydmabldt0d"]
+
+[ext_resource type="PackedScene" uid="uid://17m5w0otle0t" path="res://data/Player/revolver/revolver.glb" id="1_ddri5"]
+
+[sub_resource type="Animation" id="Animation_vv5f7"]
+resource_name = "Shooting"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.22, 1, 0, 0, 0, 0.32, 1, 0, 0, 1, 0.45, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frame:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.22, 0.32, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.698132, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("frame/trigger:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.698132, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("frame/hammer:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.22),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.523599, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f0nqd"]
+resource_name = "gun_lowered"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frame:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yy6ya"]
+resource_name = "gun_raised"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frame:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hpxx8"]
+resource_name = "reload"
+length = 4.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("frame/Cylinder for bullets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.3, 1, -0.0111609, 3.53017, -3.89167, 0.5, 1, -1.04102, 3.53017, -3.89167, 4, 1, -1.04102, 3.53017, -3.89167, 4.2, 1, -0.0111609, 3.53017, -3.89167)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("frame:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1.6, 2.8, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.97667, 0), Vector3(0, -1.97667, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("frame:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0001, 0.2, 0.4, 0.8, 1.6, 2.8, 3.4, 3.8, 4.0001, 4.1, 4.2, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.325539), Vector3(0, 0, 0.872665), Vector3(0, 0, 0), Vector3(-1.37457, 0, 0), Vector3(-1.37457, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.413835), Vector3(0, 0, -0.533373), Vector3(0, 0, -0.533373), Vector3(0, 0, -0.565539), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_obnud"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k811y"]
+_data = {
+"RESET": SubResource("Animation_obnud"),
+"Shooting": SubResource("Animation_vv5f7"),
+"gun_lowered": SubResource("Animation_f0nqd"),
+"gun_raised": SubResource("Animation_yy6ya"),
+"reload": SubResource("Animation_hpxx8")
+}
+
+[node name="revolver" instance=ExtResource("1_ddri5")]
+
+[node name="frame" parent="." index="0"]
+transform = Transform3D(0.389143, 0, 0, 0, 0.389143, 0, 0, 0, 0.389143, 0, 0, 0)
+
+[node name="Cylinder for bullets" parent="frame" index="1"]
+transform = Transform3D(0.82056, 0, 0, 0, -3.58678e-08, 0.82056, 0, -0.82056, -3.58678e-08, -0.0111609, 3.53017, -3.89167)
+
+[node name="hammer" parent="frame" index="2"]
+transform = Transform3D(0.619717, 0, 0, 0, 0.619717, 0, 0, 0, 0.619717, -0.0111609, 3.44417, -1.39307)
+
+[node name="trigger" parent="frame" index="3"]
+transform = Transform3D(0.702725, 0, 0, 0, 0.702725, 0, 0, 0, 0.702725, -0.0111609, 1.97221, -3.30142)
+
+[node name="RayCast3D" type="RayCast3D" parent="frame" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.24589, -10.9127)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_k811y")
+}

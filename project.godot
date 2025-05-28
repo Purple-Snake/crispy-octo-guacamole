@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="project ps1 graphics"
-run/main_scene="res://scenes/enviroments/devworld.tscn"
+run/main_scene="res://data/scenes/enviroments/devworld.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://globals/globals.gd"
+Globals="*res://data/globals/globals.gd"
 
 [display]
 
@@ -29,6 +29,10 @@ window/stretch/scale=3.0
 [dotnet]
 
 project/assembly_name="project ps1 graphics"
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 
@@ -62,6 +66,16 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
+sprint={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+reload={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -69,6 +83,9 @@ interact={
 3d_render/layer_2="bullets"
 3d_render/layer_3="enemies"
 3d_render/layer_5="item layer"
+3d_render/layer_19="HUD"
 3d_render/layer_20="subviewport"
 3d_physics/layer_1="walls"
+3d_physics/layer_2="player"
+3d_physics/layer_4="bullet"
 3d_physics/layer_5="item interaction"
