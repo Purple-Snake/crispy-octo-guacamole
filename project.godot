@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project ps1 graphics"
-run/main_scene="res://data/scenes/enviroments/devworld.tscn"
+run/main_scene="res://data/assets/mansion/mansion.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,8 @@ Globals="*res://data/globals/globals.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1600
+window/size/viewport_height=700
 window/stretch/mode="viewport"
 window/stretch/scale=3.0
 

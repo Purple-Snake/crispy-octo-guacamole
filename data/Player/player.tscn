@@ -110,7 +110,7 @@ metadata/_edit_use_anchors_ = true
 transparent_bg = true
 handle_input_locally = false
 positional_shadow_atlas_size = 4096
-size = Vector2i(1920, 1080)
+size = Vector2i(1600, 700)
 render_target_update_mode = 4
 
 [node name="subviewportcamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]

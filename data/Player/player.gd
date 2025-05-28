@@ -7,6 +7,12 @@ extends CharacterBody3D
 @export var is_sprinting = false
 
 
+var recoil_strength := -0.05
+var recoil_recovery_speed := 8.0
+var recoil_pitch := 0.0
+
+
+
 var health = 100;
 
 signal itemInteract;
@@ -85,13 +91,21 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	#shooting
-	if Input.is_action_pressed("shoot") && Globals.ammoInGun > 0:
-		if !revolver_animation.is_playing() && gunIsLowered == false:
+	if Input.is_action_pressed("shoot") and Globals.ammoInGun > 0:
+		if !revolver_animation.is_playing() and gunIsLowered == false:
 			revolver_animation.play("Shooting")
 			if hitscan.is_colliding():
 				if hitscan.get_collider().is_in_group("enemy"):
 					hitscan.get_collider().hit()
 			Globals.ammoInGun -= 1
+			recoil_pitch += recoil_strength  # Apply recoil
+	
+	# Recoil effect
+	if recoil_pitch < 0:
+		var new_pitch = camera.rotation.x - recoil_pitch
+		camera.rotation.x = clamp(new_pitch, deg_to_rad(-30), deg_to_rad(60))
+		recoil_pitch = lerp(recoil_pitch, 0.0, delta * recoil_recovery_speed)
+
 	
 	if Input.is_action_pressed("reload") && Globals.ammoInGun != 6:
 		if !revolver_animation.is_playing() && gunIsLowered == false:

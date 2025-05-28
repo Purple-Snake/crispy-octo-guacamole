@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbxta8a1dqvex"]
+[gd_scene load_steps=4 format=3 uid="uid://cbxta8a1dqvex"]
 
 [ext_resource type="Script" path="res://data/hud/hudScript.gd" id="1_ngsdn"]
+[ext_resource type="Texture2D" uid="uid://dax5mj1xptqf" path="res://data/hud/g344.svg" id="2_vwuxo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5jwwh"]
 font_size = 30
@@ -56,3 +57,17 @@ layout_mode = 1
 offset_top = 4.0
 offset_right = 139.0
 offset_bottom = 63.0
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="G344" type="Sprite2D" parent="Container"]
+texture_filter = 1
+position = Vector2(19.5, 19.4583)
+scale = Vector2(0.5, 0.492424)
+texture = ExtResource("2_vwuxo")

@@ -4,6 +4,7 @@ enum State { PATROL, CHASE }
 var state = State.PATROL
 
 var player = null
+var dead = false
 
 @export var speed = 4.0
 @export var attackRange = 2.5
@@ -52,6 +53,9 @@ func _process(_delta):
 		animationTree.set("parameters/conditions/attack", false)
 		animationTree.set("parameters/conditions/run", true)
 	
+	if dead:
+		return
+	
 	move_and_slide()
 
 func handle_patrol():
@@ -75,6 +79,8 @@ func handle_patrol():
 
 
 func handle_chase():
+	if dead:
+		return
 	navAgent.set_target_position(player.global_transform.origin)
 	var next_pos = navAgent.get_next_path_position()
 	var direction = (next_pos - global_transform.origin).normalized()
@@ -130,6 +136,7 @@ func _on_area_3d_body_part_hit(damage):
 	health -= damage
 	print(health)
 	if health <= 0:
+		dead = true
 		animationTree.set("parameters/conditions/death", true)
 		await get_tree().create_timer(4.0).timeout
 		queue_free()
